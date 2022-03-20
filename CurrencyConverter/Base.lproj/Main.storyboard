@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logoapp" translatesAutoresizingMaskIntoConstraints="NO" id="CXp-xg-JhU" userLabel="logo_app">
+                                <rect key="frame" x="87" y="127" width="325" height="321"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CXp-xg-JhU" secondAttribute="height" multiplier="325:321" id="5k6-rP-7XP"/>
+                                    <constraint firstAttribute="width" constant="325" id="FqX-EZ-BAA"/>
+                                    <constraint firstAttribute="height" constant="321" id="OIZ-js-58k"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kF-0i-ntk" userLabel="btn_reset">
+                                <rect key="frame" x="211" y="710" width="163" height="60"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="163" id="05k-0C-eQg"/>
+                                    <constraint firstAttribute="width" secondItem="3kF-0i-ntk" secondAttribute="height" multiplier="163:60" id="gQ5-nd-i4s"/>
+                                    <constraint firstAttribute="height" constant="60" id="iIQ-0J-a2W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <state key="normal" title="Réinitialiser">
+                                    <color key="titleColor" systemColor="tertiarySystemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1Z-bT-IVq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La valeur sera convertie en dollars." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaO-Z4-XBK" userLabel="dollars_aff">
+                                <rect key="frame" x="16" y="593" width="358" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="3TM-qt-VuT"/>
+                                    <constraint firstAttribute="width" secondItem="ZaO-Z4-XBK" secondAttribute="height" multiplier="358:51" id="I57-nz-qHZ"/>
+                                    <constraint firstAttribute="width" constant="358" id="tbM-rG-FWx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" systemColor="systemTealColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IG1-bK-ndp" userLabel="saisir_valeur">
+                                <rect key="frame" x="8" y="519" width="374" height="37"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="quandUserChangeValeur:" destination="BYZ-38-t0r" eventType="editingChanged" id="1df-zb-xgI"/>
+                                    <action selector="whenUserTypeAValue:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="M2e-2n-Q6c"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZaO-Z4-XBK" firstAttribute="top" secondItem="IG1-bK-ndp" secondAttribute="bottom" constant="37" id="422-xg-Eyb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3kF-0i-ntk" secondAttribute="bottom" constant="40" id="6Bb-eY-i2t"/>
+                            <constraint firstItem="3kF-0i-ntk" firstAttribute="top" secondItem="ZaO-Z4-XBK" secondAttribute="bottom" constant="66" id="Hv2-jb-7rR"/>
+                            <constraint firstItem="CXp-xg-JhU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="M0w-lI-QQm"/>
+                            <constraint firstItem="IG1-bK-ndp" firstAttribute="centerX" secondItem="ZaO-Z4-XBK" secondAttribute="centerX" id="PrK-yN-DU4"/>
+                            <constraint firstItem="CXp-xg-JhU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="83" id="T27-bM-BUv"/>
+                            <constraint firstItem="IG1-bK-ndp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="juU-jU-dFu"/>
+                            <constraint firstItem="3kF-0i-ntk" firstAttribute="trailing" secondItem="ZaO-Z4-XBK" secondAttribute="trailing" id="kab-bP-ZY5"/>
+                            <constraint firstItem="3kF-0i-ntk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="lkr-eM-Tgc"/>
+                            <constraint firstItem="IG1-bK-ndp" firstAttribute="top" secondItem="CXp-xg-JhU" secondAttribute="bottom" constant="71" id="qBX-7O-Hx2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btn_reset" destination="3kF-0i-ntk" id="hn1-u6-nOA"/>
+                        <outlet property="dollars_aff" destination="ZaO-Z4-XBK" id="mdd-D4-WQt"/>
+                        <outlet property="logo_app" destination="CXp-xg-JhU" id="B6f-iF-xHk"/>
+                        <outlet property="saisir_valeur" destination="IG1-bK-ndp" id="zKZ-Gw-mnK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.076923076923077" y="45.497630331753555"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logoapp" width="682.66668701171875" height="682.66668701171875"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
